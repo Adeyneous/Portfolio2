@@ -1,0 +1,686 @@
+/* Main */
+body {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: white; /* White text color */
+  font-family: 'Arial', sans-serif; /* Font styling */
+  font-size: 16px;
+  
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #ffffff; /* White text for header */
+}
+nav ul {
+  display: flex;
+  justify-content: center; /* This will center the nav items */
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  margin: 0 1rem;
+}
+nav ul li a {
+  color: #ffffff; /* White text for navigation links */
+  text-decoration: none;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #a020f0; /* Purple hover color */
+}
+main {
+  margin: 2rem;
+}
+main p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000; /* Black text for paragraphs */
+}
+main p span {
+  color: #a020f0; /* Purple color for span elements */
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Keep the particles in the background */
+}
+
+button {
+  background-color: #371179;; /* Purple background for buttons */
+  border: none;
+  border-radius: 0.5rem;
+  color: #ffffff; /* White text for buttons */
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+button:hover {
+  background-color: #6600cc; /* Darker purple for button hover state */
+}
+footer {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  padding: 1rem;
+  text-align: center;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  margin: 0 1rem;
+}
+footer ul li a {
+  color: #ffffff; /* White text for footer links */
+  text-decoration: none;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Home */
+
+.content-container {
+  display: flex;
+  flex-direction: row; /* Ensure horizontal layout */
+  align-items: center; /* Vertical alignment */
+  justify-content: space-between; /* Even spacing between items */
+  min-height: 100vh; /* Full viewport height */
+  align-items: center; /* vertically centers children */
+  padding: 20px; /* Padding around the content */
+  background: transparent;
+}
+
+/* Container for coder's profile JSON, on the right */
+.coder-profile {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: flex-end; /* Align children to the end (bottom) of the container */
+  position: relative; /* Necessary for absolute positioning of children */
+  order: 2; /* Appears on the left */
+  flex-basis: auto; /* Control the size of the coder profile section */
+  width: 600px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  background: #0D1117; /* Dark blue background similar to Visual Studio Code */
+  color: #58A6FF; /* Bright blue text color */
+  font-family: 'Consolas', 'Courier New', monospace; /* Monospace font for code-like appearance */
+  padding: 20px; /* Padding around the text */
+  border: 2px solid white; /* White border as requested */
+  border-radius: 5px; /* Rounded corners for the code container */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Subtle shadow for depth */
+  white-space: pre-wrap; /* Maintain formatting of the code */
+  overflow-x: auto; /* Allow horizontal scrolling if content is too wide */
+  margin-right: 100px; /* Space between the profile and message */
+}
+
+.coder-profile::before {
+  content: ''; /* Necessary for the pseudo-element to display */
+  position: absolute;
+  top: 10%; /* Position at 50% from the top of the container */
+  left: 0;
+  right: 0;
+  height: 2px; /* Height of the horizontal line */
+  background-color: white; /* Color of the horizontal line */
+  transform: translateY(-50%); /* Center the line exactly at 50% vertically */
+}
+
+.dot-container {
+  position: absolute;
+  top: 20px; /* Adjust so it does not push down other content */
+  left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: red; /* default, override with class-specific colors */
+  margin-right: 5px;
+}
+
+.red-dot { background-color: red; }
+.green-dot { background-color: green; }
+.yellow-dot { background-color: yellow; }
+.purple-dot { background-color: purple; }
+
+.dot:hover { cursor: pointer; }
+
+
+
+
+
+.welcome-message-container {
+  width: 35%; /* Adjust width based on layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start */
+  padding: 20px;
+  order: 1; /* Appears on the right */
+  margin-top: -80px; /* Margin for spacing on smaller screens */
+}
+
+.welcome-message {
+  color: white; /* Set text color */
+  font-size: 1.2rem; /* Font size for readability */
+  line-height: 1.5; /* Line height for better text presentation */
+}
+
+
+
+.cursor {
+  font-weight: bold;
+  display: inline-block;
+  width: 10px;
+  animation: blink 0.7s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+      visibility: hidden;
+  }
+}
+
+
+.welcome-message-container {
+  order: 1; /* Higher order to push it to the right */
+}
+
+.coder-profile {
+  order: 2; /* Lower order to keep it to the left */
+}
+
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column; /* Stack vertically on smaller screens */
+    align-items: center; /* Center align items on small screens */
+  }
+  
+  .coder-profile,
+  .welcome-message-container {
+    width: 90%; /* Full width on smaller screens */
+    margin-top: 10px; /* Margin for spacing on smaller screens */
+  }
+}
+
+  .coder-profile {
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrolling */
+  }
+
+  #form-actions {
+    display: flex;      /* Aligns children (buttons) in a row */
+    justify-content: center; /* Centers buttons in the form */
+    padding: 10px;     /* Adds padding around the form */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #a020f0; /* Purple background for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px; /* Space between buttons */
+}
+
+.button:hover {
+  background-color: #6600cc; /* Darker purple for button hover state */
+}
+
+  
+
+
+/* About */
+
+.about-container {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+  justify-content: center; /* Horizontal alignment */
+  min-height: 100vh; /* Full viewport height */
+  padding: 20px; /* Add padding as needed */
+  
+}
+
+.about-picture-box {
+  width: 28.3%; /* Adjust as needed for your design */
+  border: 2px solid #FFFFFF; /* Example of a white border; adjust the color as needed */
+  box-shadow: 0 4px 8px 0 rgba(237, 235, 235, 0.2), /* Horizontal offset, vertical offset, blur radius, spread radius, color */
+              0 6px 20px 0 rgba(122, 122, 122, 0.19); /* Same as above for a more diffuse shadow */
+  /* Additional styles for the picture box */
+  border-radius: 50%; /* Make the box circular */
+  overflow: hidden; /* Ensure content doesn't overflow if it's larger than the circle */
+  filter: grayscale(100%); /* Convert the picture to black and white */
+  transition: filter 0.3s ease; /* Add a transition effect */
+}
+
+
+.about-message-container{
+  /* Assuming you want the text container to take up the remaining space */
+  flex: 2; /* Adjust as needed, this will define the proportion of the container relative to the picture-box */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically */
+  align-items: flex-start; /* Align text to the start of the container (left aligned) */
+  text-align: left; /* Align the text inside the container to the left */
+  padding: 20px; /* Add padding as needed */
+  margin-left: 20px; /* Add margin to separate from the picture box */
+}
+
+.about-picture-box:hover {
+  filter: grayscale(0%); /* Revert the picture to color on hover */
+  transform: scale(1.1); /* Increase the size slightly on hover */
+}
+
+.about-message- span {
+  font-size: 1.3rem; /* Your desired font size */
+  line-height: 1.6; /* Adjust line-height for better readability and alignment */
+  color: white; /* Default text color */
+}
+
+.about-message- span.purple-text {
+  color: purple;
+}
+
+
+
+
+
+/* SKILLS  */
+
+.skill-border {
+  position: fixed; 
+  top: 0;
+  bottom: 0;
+  width: 200px; 
+  background-color: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  z-index: 10; 
+}
+
+
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Space between items */
+  max-width: 960px; /* Adjust as needed */
+  margin: auto; /* Center the container on the page */
+  padding-top: 50px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column; /* Stack the elements vertically */
+  align-items: left; /* Center-align items horizontally */
+  text-align: center; /* Center-align the text for each skill item */
+  flex-basis: 20%; /* Adjust this value depending on how many items you want per row */
+  /* Ensure there's enough space for the text */
+  margin-top: 20px;
+  
+}
+
+.circle-background,
+.circle-progress {
+  stroke-width: 10;
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.circle-background {
+  stroke: #ddd;
+}
+
+.circle-progress {
+  stroke: #5f057d; /* Example color for the progress bar */
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.circle-text {
+  fill: white;
+  font-size: 1rem;
+  font-weight: bold;
+  alignment-baseline: middle;
+  text-anchor: middle;
+  display: none;
+}
+
+.skill:hover .circle-text {
+  display: block;  /* Only display on hover */
+}
+
+
+.skill-percentage {
+  height: 25px; /* Set the height of the rating bar */
+  background-color: rgb(10, 0, 14); /* Your color for the percentage bar */
+  color: white;
+  /* Add other styles like border-radius, etc. */
+}
+
+.skill-name {
+  color: white;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.skill-description {
+  text-align: center; /* Center the text inside the paragraph */
+  width: 80%; /* Adjust the width to fit within the circles */
+  max-width: 960px; /* Matches the width of your skills container */
+  margin: 20px auto; /* Center the paragraph on the page and add vertical spacing */
+  color: rgb(242, 240, 245); /* Text color */
+  font-size: 1rem; /* Font size */
+  display: none; 
+}
+
+.logo-container {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: visible; /* Change from hidden to visible */
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: auto;
+  position: fixed;
+  bottom: 0; /* Positions the container at the bottom of the viewport */
+  left: 0; /* Aligns the container to the left */
+  right: 0; /* Ensures the container stretches across the width */
+}
+
+
+
+.logo {
+  display: flex;
+  flex-shrink: 0;
+  flex: 0 0 auto; /* Ensures logos do not shrink or grow */
+  flex-direction: column;
+  align-items: center;
+  width: 120px; /* Fixed width */
+  height: 150px; /* Fixed height */
+  padding: 10px;
+  margin: 10px;
+  margin-right: 5px; /* Reduced from whatever it was before */
+  border-radius: 10px;
+  border: 2px solid #8f46e8; /* Blue border */
+  box-shadow: 0 0 10px #370142; /* Adjust glow effect to match desired look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: scroll-logos 5s linear infinite; /* Adjust the timing as needed */
+  animation: none; 
+}
+
+.logo-label {
+  display: block;
+  color: #ffffff; /* Adjust color to fit your design */
+  font-size: 1rem;
+  margin-top: 30px; /* Space between the image and the label */
+  text-align: center;
+}
+
+
+.logo:hover {
+  opacity: 1; /* Logos appear fully opaque when hovered */
+  transform: scale(1.1); /* Increase scale to make it pop out */
+  z-index: 10; /* Make sure the hovered logo pops out over others */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+
+.logo-container:hover .logo {
+  animation-play-state: paused;
+}
+
+
+
+@media (max-width: 1200px) {
+  .logo {
+    width: calc(50% - 10px); /* Two logos per row on smaller screens */
+    margin-right: 15px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 100%; /* One logo per row on mobile screens */
+    margin-right: 0;
+    flex-direction: column;
+  }
+}
+
+
+
+/* PROJECT */
+
+
+.project-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #2c2c2c;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px; /* Spacing between rows */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  border: 1px solid rgb(82, 9, 170); /* Temporary to see the borders */
+
+  /* Width adjustment for padding and borders */
+  box-sizing: border-box; /* Include padding and borders in the width calculation */
+  width: calc(33.333% - 10px); /* Adjust the width to allow for margins */
+  margin-right: 15px; /* Margin between the cards */
+}
+
+/* Remove the margin from the right side of the last card in each row */
+.card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.project_button {
+  background-color: #a020f0; /* Purple background for buttons */
+  border: none;
+  border-radius: 0.5rem;
+  color: #ffffff; /* White text for buttons */
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.project_button:hover {
+  background-color: #6600cc; /* Darker purple for button hover state */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .card {
+    width: calc(50% - 10px); /* Two cards per row on smaller screens */
+    margin-right: 15px;
+  }
+  .card:nth-child(2n) {
+    margin-right: 0; /* Remove margin-right on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* One card per row on mobile screens */
+    margin-right: 0; /* Remove margin-right on mobile */
+  }
+}
+
+/* Review */
+.review-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid rgb(82, 9, 170);
+  border-radius: 5px;
+  background-color: #0f1010;
+}
+
+.review-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form-container label {
+  margin-top: 10px;
+}
+
+.review-form-container select,
+.review-form-container input,
+.review-form-container textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.review-form-container .form-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-form-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #a020f0; /* Purple background for buttons */
+  color: white;
+}
+
+.review-form-container button[type="button"] {
+  background-color: #a020f0; /* Purple background for buttons */
+}
+
+.review-form-container button:hover {
+  background-color: #6600cc; /* Darker purple for button hover state */
+}
+
+/* Contact */
+
+.contact-container {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between; /* Ensures spacing between form and contact info */
+  align-items: start; /* Aligns items to the top */
+  padding: 20px; /* Adds some padding around the entire content */
+  height: 100vh; /* Optional: Adjust based on your design needs */
+}
+
+.contact-container, .contact-info {
+  flex: 1; /* Allows both sections to take equal space */
+  margin: 10px; /* Gives some space between the sections */
+}
+
+.contact-container h1 {
+  color: #AAA;
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #673AB7;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #6600cc; /* Darker purple for button hover state */
+
+}
+
+.recaptcha {
+  margin: 10px 0;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.icon {
+  margin-right: 10px;
+  width: 24px; /* Adjust icon size as needed */
+  height: auto;
+}
+
+
